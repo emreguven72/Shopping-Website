@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +16,6 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::view('/' , 'index')->name('home');
-
 Route::group(['middleware' => 'guest'], function () {
     Route::view('/signin' , 'sign-in')->name('signin');
     Route::post('/signin' , [AuthController::class, 'signin']);
@@ -25,5 +25,9 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::view('/' , 'index')->name('home');
     Route::get('/signout' , [AuthController::class, 'signout'])->name('signout');
+    Route::get('/urunler/{category_name}' , [CategoryController::class, 'index'])->name('products');
+    Route::get('/sepet' , [CartController::class, 'showCart'])->name('showCart');
+    Route::get('/sepet/ekle/{product_id}' , [CartController::class, 'addToCart'])->name('addToCart');
 });

@@ -22,11 +22,11 @@
             @endif
 
             @if(Auth::check())
-                    <a href="#" class="bg-purple-600 text-gray-50 hover:bg-purple-700 p-3 px-5 rounded-full">
+                    <a href="{{route('showCart')}}" class="bg-purple-600 text-gray-50 hover:bg-purple-700 p-3 px-5 rounded-full">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
-                        Sepet (0)
+                        Sepet
                     </a>
                     <a href="{{route('signout')}}" class="bg-red-600 text-gray-50 hover:bg-purple-700 ml-2 p-3 px-5 rounded-full">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -51,12 +51,12 @@
         <h2 class="text-3xl my-5">Kategoriler</h2>
         <div class="grid grid-flow-row xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
             <div class="shadow-2xl rounded-lg">
-                <a href="#">
+                <a href="{{route('products', 'sebze')}}">
                     <img src="{{asset('images/categories/sebze.jpg')}}" class="rounded-tl-lg rounded-tr-lg">
                 </a>
                 <div>
                     <h5 class="p-4"><a href="#">Sebze ürünleri</a></h5>
-                    <a href="#" class="flex flex-row justify-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-purple-500  hover:bg-gradient-to-l m-5">
+                    <a href="{{route('products', 'sebze')}}" class="flex flex-row justify-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-purple-500  hover:bg-gradient-to-l m-5">
                         Ürünleri görüntüle
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -65,13 +65,13 @@
                 </div>
             </div><!-- one product category -->
             <div class="shadow-2xl rounded-lg">
-                <a href="#">
+                <a href="{{route('products', 'meyve')}}">
                     <img src="{{asset('images/categories/meyve.jpg')}}" class="rounded-tl-lg rounded-tr-lg">
                 </a>
                 <div>
                     <h5 class="p-4"><a href="#">Meyve ürünleri</a></h5>
-                    <a href="#" class="flex flex-row justify-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-purple-500  hover:bg-gradient-to-l m-5">
-                        View Details
+                    <a href="{{route('products', 'meyve')}}" class="flex flex-row justify-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-purple-500  hover:bg-gradient-to-l m-5">
+                        Ürünleri görüntüle
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
@@ -79,13 +79,13 @@
                 </div>
             </div><!-- one product category -->
             <div class="shadow-2xl rounded-lg">
-                <a href="#">
+                <a href="{{route('products', 'et')}}">
                     <img src="{{asset('images/categories/et.jpg')}}" class="rounded-tl-lg rounded-tr-lg">
                 </a>
                 <div>
                     <h5 class="p-4"><a href="#">Et ürünleri</a></h5>
-                    <a href="#" class="flex flex-row justify-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-purple-500  hover:bg-gradient-to-l m-5">
-                        View Details
+                    <a href="{{route('products', 'et')}}" class="flex flex-row justify-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-purple-500  hover:bg-gradient-to-l m-5">
+                        Ürünleri görüntüle
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
@@ -93,13 +93,13 @@
                 </div>
             </div><!-- one product category -->
             <div class="shadow-2xl rounded-lg">
-                <a href="#">
+                <a href="{{route('products', 'giyim')}}">
                     <img src="{{asset('images/categories/giyim.jpg')}}" class="rounded-tl-lg rounded-tr-lg">
                 </a>
                 <div>
                     <h5 class="p-4"><a href="#">Giyim ürünleri</a></h5>
-                    <a href="#" class="flex flex-row justify-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-purple-500  hover:bg-gradient-to-l m-5">
-                        View Details
+                    <a href="{{route('products', 'giyim')}}" class="flex flex-row justify-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-purple-500  hover:bg-gradient-to-l m-5">
+                        Ürünleri görüntüle
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
@@ -107,7 +107,7 @@
                 </div>
             </div><!-- one product category -->
         </div><!--product category cards-->
-    </div><!-- Men's Collection -->
+    </div><!-- categories -->
 </div><!-- Whole Site-->
 </body>
 </html>

@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function findCategoryProducts()
+    public function index($category_name)
     {
-
+        $category = Category::where('category_name', $category_name)->first();
+        $products = $category->products()->get();
+        return view('products', compact('products', 'category_name'));
     }
 }

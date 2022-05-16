@@ -9,7 +9,7 @@ class Cart extends Model
 {
     use HasFactory;
 
-    public $fillable = ['user_id'];
+    public $fillable = ['product_id', 'user_id'];
 
     public function user()
     {
@@ -18,6 +18,6 @@ class Cart extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class , 'cart_product' , 'product_id' , 'category_id');
+        return $this->belongsToMany(Product::class, 'carts', 'product_id');
     }
 }
