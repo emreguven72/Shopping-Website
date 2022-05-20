@@ -9,7 +9,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-
     <div class="container mx-auto p-5">
         <div class="md:flex md:flex-row md:justify-between text-center">
             <div class="flex flex-row justify-center">
@@ -52,16 +51,15 @@
             @endif
         @endif
 
-        <div class="my-15">
+        <div class="my-10">
             <h2 class="text-3xl my-5">{{$category_name}} ürünleri</h2>
             <div class="grid grid-flow-row xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
                 @foreach($products as $product)
                     <div class="shadow-2xl rounded-lg">
-                        <a href="#">
-                            <img src="{{asset($product->image_path)}}" class="rounded-tl-lg rounded-tr-lg">
-                        </a>
-                        <div>
-                            <h5 class="p-4"><a href="#">{{$product->product_name}}</a></h5>
+                        <img src="{{asset($product->image_path)}}" class="rounded-tl-lg rounded-tr-lg">
+                        <div class="flex flex-col">
+                            <h5 class="p-4 text-xl"><a href="{{route('addToCart', $product->id)}}">{{$product->product_name}}</a></h5>
+                            <h2 class="px-4 text-3xl">{{$product->price}} TL</h2>
                             <a href="{{route('addToCart', $product->id)}}" class="flex flex-row justify-center px-4 py-2 rounded-full bg-gradient-to-r from-red-600 to-red-500  hover:bg-gradient-to-l m-5">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -69,10 +67,10 @@
                                 Sepete ekle
                             </a>
                         </div>
-                    </div><!-- one product -->
+                    </div><!-- One product -->
                 @endforeach
-            </div><!--product category cards-->
-        </div><!-- Product -->
+            </div><!--Product categories-->
+        </div><!-- Products -->
     </div>
 </body>
 </html>
